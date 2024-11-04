@@ -114,8 +114,19 @@ public class ConnectFour {
     public Location getTopOfColumn(int column) {
         // Question 1
         // TODO
-        
-        return Location.EMPTY;
+
+        // System.out.print(board[6][column]);
+        if (board[5][column] == Location.RED) {
+            return Location.RED;
+        }
+        else if (board[5][column] == Location.BLACK) {
+            return Location.BLACK;
+        }
+        else {
+            return Location.EMPTY;
+        }
+        // return Location.EMPTY;
+
     }
     
     /**
@@ -129,8 +140,14 @@ public class ConnectFour {
     public int getHeightOfColumn(int column) {
         // Question 2
         // TODO
-        
-        return 0;
+        byte columnHeight = 0;
+        boolean empty = true;
+        for (int i = 0; i < 6; i++) {
+            if (board[i][column] != Location.EMPTY) {
+                columnHeight += 1;
+            }
+        }
+        return columnHeight;
     }
     
     /**
